@@ -42,3 +42,30 @@ module.exports.create = async function (req, res) {
     res.redirect("back");
   }
 };
+
+module.exports.delete = async function (req, res) {
+  const { id } = req.params;
+  try {
+    const student = await Student.findById(id);
+
+    if (student && student.interviews.length > 0) {
+      for (let item of student.interviews) {
+        const company = await Company.findOne({ name: item.company });
+        if (company) {
+          for (let i = 0; i < company.students.length; i++) {
+            if (company.students[i].student.toString() === id) {
+              company.students.splice(i, 1);
+              company.save();
+              break;
+            }
+          }
+        }
+      }
+    }
+    await Student.findByIdAndDelete(id);
+    res.redirect("back");
+  } catch (error) {
+    console.log(`Error in deleting student ${err}`);
+    return res.redirect("back");
+  }
+};
