@@ -1,7 +1,7 @@
 const Student = require("../models/studentSchema");
 
 module.exports.addStudent = function (req, res) {
-  return res.render("student", { title: "Placement Cell | Student Page" });
+  return res.render("student", { title: "Placement Cell | Student Portal" });
 };
 
 module.exports.create = async function (req, res) {

@@ -7,6 +7,7 @@ console.log("router loaded");
 router.get("/", passport.checkAuthentication, homeController.home);
 router.use("/users", require("./users"));
 router.use("/student", require("./student"));
+router.use("/company", require("./company"));
 
 router.use((req, res) => {
   return res.status(404).render("404", {
