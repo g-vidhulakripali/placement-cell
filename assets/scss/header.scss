@@ -3,9 +3,8 @@
         display: flex;
         justify-content: space-between;
         padding: 0 10px;
-        background: #2196f3;
+        background: #000B18;
         color: white;
-        box-shadow: 1px 1px 1px 1px lightgrey;
 
         .mini-logo{
             p{
@@ -19,9 +18,10 @@
             ul{
                 margin: 5% 5px;
                 display: flex;
+                list-style-type: none;
 
                 li{
-                    margin-right: 10px;
+                    margin-right: 2rem;
                 }
             }
         }

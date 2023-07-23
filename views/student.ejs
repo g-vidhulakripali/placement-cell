@@ -3,16 +3,9 @@
 			class="w-50 mx-auto mt-4"
 			action="/student/create"
 			method="post"
-			style="
-				height: 100%;
-				display: grid;
-				place-content: center;
-				background: white;
-				border-radius: 5px;
-				box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.05);
-				padding: 50px 70px;
-			"
+			id="student-form"
 		>
+        <%- include('partials/_back_home'); %>
 			<h3 style="text-align: center">Add Student</h3>
 			<fieldset>
 				<label for="batch">Batch</label>

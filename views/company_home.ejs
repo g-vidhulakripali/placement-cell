@@ -1,8 +1,7 @@
-<h1> Company Home</h1>
 <div class="w-75 mx-auto mt-5">
     <div class="row">
         <div class="col-6">
-            <h1>Interviews</h1>
+            <h1>Interview List</h1>
         </div>
 
         <div class="col-6 d-flex justify-content-end">
@@ -25,7 +24,7 @@
                 </tr>
             </thead>
 
-            <tbody id="myTable">
+            <tbody id="myTable" style="color: white;">
                 <% for(let student of students){%> <%i=0%> <% while(i< student.interviews.length){%>
                 <tr class="row-ref">
                     <th scope="row"><%=student.interviews[i].company%></th>
