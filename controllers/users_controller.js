@@ -21,6 +21,8 @@ module.exports.signIn = function (req, res) {
 // Controller function to create a new user account
 module.exports.create = async function (req, res) {
   if (req.body.password != req.body.confirm_password) {
+    req.flash("error", "Password Doesn't Match");
+    console.log("Password Doesn't Match");
     return res.redirect("back");
   }
 

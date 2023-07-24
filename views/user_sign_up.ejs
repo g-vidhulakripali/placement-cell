@@ -1,13 +1,14 @@
 
 <div id="sign-up-container" class="w-50 mx-auto mt-5"  >
+    <%- include('partials/_back_home'); %>
   <div class="mx-auto mt-3 mb-4" style="width: 100px">
     <h4>Sign Up</h4>
   </div>
   <div class="mb3">
     <form action="/users/create" method="POST" >
-
+       
       <label for="name" class="form-label">Name</label>
-      <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" required/>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required/>
     </div>
 
     <div class="mb-3">
@@ -22,7 +23,7 @@
 
     <div class="mb-3">
       <label for="Password" class="form-label">Confirm Password</label>
-      <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required />
+      <input type="password" class="form-control" id="confirmPassword" name="confirm_password" required />
     </div>
     <div class="mb-4 mt-3" style="display: flex; justify-content: center">
       <button type="submit" class="btn btn-success btn-block mb-4">Sign Up</button>
