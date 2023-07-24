@@ -1,5 +1,6 @@
 const Student = require("../models/studentSchema");
 
+// Controller function to render the home page with a list of all students
 module.exports.home = async function (req, res) {
   try {
     let students = await Student.find({});
@@ -8,7 +9,7 @@ module.exports.home = async function (req, res) {
       students: students,
     });
   } catch (err) {
-    console.log(`Error in finding the Student $(err)`) ;
+    console.log(`Error in finding the Student ${err}`);
     return res.render("back");
   }
 };

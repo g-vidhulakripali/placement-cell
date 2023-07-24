@@ -17,15 +17,15 @@
 			<fieldset>
 				<div class="mb-3">
 					<label for="name" class="form-label">Name</label>
-					<input type="text" class="form-control" id="name" name="name" />
+					<input type="text" class="form-control" id="name" name="name" required/>
 				</div>
 				<div class="mb-3">
 					<label for="email" class="form-label">Email address</label>
-					<input type="email" class="form-control" id="email" placeholder="abc@gmail.com" name="email" />
+					<input type="email" class="form-control" id="email" placeholder="abc@gmail.com" name="email" required/>
 				</div>
 				<div class="mb-3">
 					<label for="contactNumber" class="form-label">Mobile Number</label>
-					<input type="text" class="form-control" id="contactNumber" name="contactNumber" />
+					<input type="number" class="form-control" id="contactNumber" name="contactNumber" maxlength="10" />
 				</div>
 				<div class="mb-3">
 					<label for="college" class="form-label">College Name</label>
@@ -44,15 +44,15 @@
 				<div class="mb-3" style="display: flex; justify-content: space-between">
 					<div class="mb-3 p-1">
 						<label for="dsa" class="form-label">DSA</label>
-						<input type="text" class="form-control" id="dsa" name="dsa" />
+						<input type="number" class="form-control" id="dsa" name="dsa" maxlength="2" minlength="1" />
 					</div>
 					<div class="mb-3 p-1">
 						<label for="webd" class="form-label">Web Development</label>
-						<input type="text" class="form-control" id="webd" name="webd" />
+						<input type="number" class="form-control" id="webd" name="webd" maxlength="2" minlength="1"/>
 					</div>
 					<div class="mb-3 p-1">
 						<label for="react" class="form-label">React</label>
-						<input type="text" class="form-control" id="react" name="react" />
+						<input type="number" class="form-control" id="react" name="react" maxlength="2" minlength="1" />
 					</div>
 				</div>
 			</fieldset>

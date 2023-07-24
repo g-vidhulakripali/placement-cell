@@ -2,6 +2,7 @@ const Student = require("../models/studentSchema");
 const fs = require("fs");
 const path = require("path");
 
+// Controller function to generate and download a CSV report containing student data and interview details
 module.exports.download = async function (req, res) {
   try {
     const students = await Student.find({});
@@ -57,8 +58,10 @@ module.exports.download = async function (req, res) {
           return res.redirect("back");
         }
         console.log("Report generated successfully");
+        req.flash("success", "Report generated successfully");
         return res.download(
-          path.join(__dirname, "../assets/reports/report.csv")
+          path.join(__dirname, "../assets/reports/report.csv"),
+          "report.csv"
         );
       }
     );

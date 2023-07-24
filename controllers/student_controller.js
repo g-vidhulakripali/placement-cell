@@ -1,9 +1,11 @@
 const Student = require("../models/studentSchema");
 
+// Controller function to render the add student form page
 module.exports.addStudent = function (req, res) {
   return res.render("student", { title: "Placement Cell | Student Portal" });
 };
 
+// Controller function to create a new student in the database
 module.exports.create = async function (req, res) {
   try {
     const {
@@ -21,6 +23,7 @@ module.exports.create = async function (req, res) {
 
     if (student) {
       console.log("Email already exists");
+      req.flash("error", "Email already exists");
       return res.redirect("back");
     }
 
@@ -35,7 +38,7 @@ module.exports.create = async function (req, res) {
       webd,
       react,
     });
-
+    req.flash("success", "Student Details are Added");
     return res.redirect("/");
   } catch (err) {
     console.log(`Unable to add students in DB ${err}`);
@@ -43,6 +46,7 @@ module.exports.create = async function (req, res) {
   }
 };
 
+// Controller function to delete a student and remove them from associated companies
 module.exports.delete = async function (req, res) {
   const { id } = req.params;
   try {
@@ -63,6 +67,7 @@ module.exports.delete = async function (req, res) {
       }
     }
     await Student.findByIdAndDelete(id);
+    req.flash("success", "Student Details are Deleted");
     res.redirect("back");
   } catch (error) {
     console.log(`Error in deleting student ${err}`);
