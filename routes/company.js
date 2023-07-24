@@ -3,10 +3,10 @@ const router = express.Router();
 const companyController = require("../controllers/company_controller");
 const passport = require("passport");
 
-router.get("/home", companyController.company);
-router.get("/interview", companyController.interview);
+router.get("/home",passport.checkAuthentication, companyController.company);
+router.get("/interview",passport.checkAuthentication, companyController.interview);
 
-router.post("/create", companyController.create);
-router.post("/update/:id", companyController.update);
+router.post("/create",passport.checkAuthentication, companyController.create);
+router.post("/update/:id", passport.checkAuthentication,companyController.update);
 
 module.exports = router;
