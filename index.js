@@ -57,7 +57,8 @@ app.use(
       maxAge: 1000 * 60 * 100,
     },
     store: MongoStore.create({
-      mongoUrl: "mongodb://127.0.0.1:27017/placement_cell_db",
+      mongoUrl:
+        "mongodb+srv://gvidhulakripali:Oey4aY6N1BI9N57K@cluster0.squt5dz.mongodb.net/placement-cell-db",
       autoRemove: "disabled",
     }),
   })
